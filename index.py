@@ -11,7 +11,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 from app import app
-from apps import page1, page2, page3, page4, page5
+# page4 is buggy
+from apps import page1, page2, page3, page5
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
