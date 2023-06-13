@@ -4,6 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+dash = "*"
+networkx = "*"
+matplotlib = "*"
+pandas = "*"
+dash-bootstrap-components = "*"
+dash-cytoscape = "*"
+scikit-learn = "*"
 
 [dev-packages]
 

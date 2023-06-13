@@ -16,14 +16,14 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.io as pio
 
-from app import app
+from main import dapp as app
 
 layout = html.Div(children=[
-    html.Div(id='home-p5', className='padheader color-section',children=[
+    html.Div(id='home-p1', className='padheader color-section',children=[
         html.Div(className='container',children=[
             html.Div(className='row',children=[
                 html.Div(className='col-4 logo',children=[
-                    html.A(href='/apps/page1', children=[
+                    html.A(href='#home', children=[
                     html.Img(src=app.get_asset_url('images/project_logo_v8.png')),
                     ]),
                 ]),
@@ -35,37 +35,61 @@ layout = html.Div(children=[
             ]),
         ]),
     ]),
-    html.Div(id='navbar-p5', children=[
+    html.Div(id='navbar-p1', children=[
         html.Div(className='padheader color-section', children=[
             html.Div(className='row', children=[
                 html.Div(className='container', children=[
-                    html.Ul(id='nav-p5', className='nav', children=[
-                        html.Li(children=[html.A(children=['Instructions'],href="/apps/page1")]),
+                    html.Ul(id='nav-p1', className='nav', children=[
+                        html.Li(children=[html.A(className='active', children=['Instructions'],href="/apps/page1")]),
                         html.Li(children=[html.A(children=['Data upload'], href="/apps/page2")]),
                         html.Li(children=[html.A(children=['Network overview'], href="/apps/page3")]),
                         html.Li(children=[html.A(children=['Dynamic network'], href="/apps/page4")]),
-                        html.Li(children=[html.A(className='active', children=['Reports'], href="/apps/page5")]),
+                        html.Li(children=[html.A(children=['Reports'], href="/apps/page5")]),
                     ]),
                 ]),
             ]),
         ]),
     ]),
-    html.Div(id='page-title-p5', className='padheader color-section', children=[
+    html.Div(id='page-title-p1', className='padheader color-section', children=[
         html.Div(className='row', children=[
             html.Div(className='container', children=[
-                html.H2(className='text-center', children=['Reports']),
+                html.H2(className='text-center', children=['Instructions']),
             ]),
         ]),
     ]),
-    html.Div(className='padsection', children=[
+    html.Div(id='intro', className='padsection', children=[
         html.Div(className='row', children=[
             html.Div(className='b-container', children=[
-                html.H3(children=['Select report']),
+                html.H3(children=['Introduction']),
                 html.P(children=['Some text here']),
             ]),
         ]),
     ]),
-    html.Div(id='contact-p5', className='padsection footer-border', children=[
+    html.Div(id='dataformat', className='padsection color-section', children=[
+        html.Div(className='row', children=[
+            html.Div(className='b-container', children=[
+                html.H3(children=['Data format and required columns']),
+                html.P(children=['Some text here']),
+            ]),
+        ]),
+    ]),
+    html.Div(id='use', className='padsection', children=[
+        html.Div(className='row', children=[
+            html.Div(className='b-container', children=[
+                html.H3(children=['Platform use instructions']),
+                html.P(children=['Some text here']),
+            ]),
+        ]),
+    ]),
+    html.Div(id='training', className='padsection color-section', children=[
+        html.Div(className='row', children=[
+            html.Div(className='b-container', children=[
+                html.H3(children=['Online training']),
+                html.P(children=['Some text here']),
+            ]),
+        ]),
+    ]),
+    html.Div(id='contact-p1', className='padsection footer-border', children=[
         html.Div(className='b-container', children=[
             html.Div(className='row', children=[
                 html.Div(className='col-2', children=[
@@ -101,7 +125,7 @@ layout = html.Div(children=[
             ]),
         ]),
     ]),
-    html.Div(id='licence-p5', className='padsection color-section footer-border', children=[
+    html.Div(id='licence-p1', className='padsection color-section footer-border', children=[
         html.Div(className='row', children=[
             html.Div(className='b-container text-center', children=[
                 html.P(children=['Copyright 2020 Sean Manzi']),

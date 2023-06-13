@@ -1,8 +1,15 @@
+# How to build and deploy
+
+The ```Dockerfile``` should enable simple building and deployment on a range of cloud hosting
+services.   It can also be used for automated (DevOps) build and deployment, for example with
+GitHub Actions.
+
+There is no requirement to have a local Docker environment
 
 To test build and run in shell (if Docker is installed locally) -
 ```sh
 % docker build -t nom-docker .
-% docker run -p 8050:8050 nom-docker
+% docker run -p 8080:80 nom-docker
 ```
 
 In Google Cloud Shell -

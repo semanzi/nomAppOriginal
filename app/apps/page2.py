@@ -22,7 +22,7 @@ import base64
 import io
 from dash.exceptions import PreventUpdate
 
-from app import app
+from main import dapp as app
 
 layout = html.Div(children=[
     html.Div(id='home-p2', className='padheader color-section',children=[

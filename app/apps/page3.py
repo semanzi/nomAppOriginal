@@ -24,7 +24,7 @@ from sklearn.preprocessing import StandardScaler
 from dash.dependencies import Input, Output, State
 from datetime import date
 
-from app import app
+from main import dapp as app
 
 fig = go.Figure()
 

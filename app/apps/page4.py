@@ -23,7 +23,8 @@ from datetime import date
 from sklearn.preprocessing import StandardScaler
 from dash.dependencies import Input, Output, State
 
-from app import app
+#from app import app
+from main import dapp as app
 
 def remove_whitespace(df):
     names = list(df.columns)

@@ -1,15 +1,17 @@
-FROM python:3.11-slim-bullseye
+FROM tiangolo/uwsgi-nginx-flask:python3.11
 
 WORKDIR /app
 
-COPY . /app/
+COPY ./app /app/
 
 ENV PIPENV_VENV_IN_PROJECT=1
 
 RUN pip install pipenv
 RUN pipenv sync
-
-EXPOSE 8050
-
-#CMD pipenv run gunicorn --bind 0.0.0.0:8000 --timeout 120 --workers 2 cbwg.wsgi
-CMD pipenv run python index.py
+# Pipenv uses Pipfile and Pipfile.lock but we can
+# easily generate a requirements.txt file. 
+RUN pipenv run pip freeze >requirements.txt
+# As pipenv will not be used to run the app, let's install
+# the packages.
+RUN pip install --no-cache-dir --upgrade pip &&\
+    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
