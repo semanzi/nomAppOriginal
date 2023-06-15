@@ -1,12 +1,22 @@
 # How to build and deploy
 
-The ```Dockerfile``` should enable simple building and deployment on a range of cloud hosting
-services.   It can also be used for automated (DevOps) build and deployment, for example with
-GitHub Actions.
+The ```Dockerfile``` here should enable simple building and deployment on a range of cloud hosting
+services. It can also be used for automated (DevOps) build and deployment, for example with GitHub Actions.
 
-There is no requirement to have a local Docker environment
 
-To test build and run in shell (if Docker is installed locally) -
+## Running locally
+There is no requirement to have a local Docker environment to build and run the container locally,
+just run the Python app as usual, e.g.
+
+```sh
+% pipenv run python app/main.py
+```
+
+### With Docker
+If you do wish to run in a container, if Docker is installed locally, use the following.
+Note that the container uses port 80, but you will likely want to forward this to port 8080
+or similiar.
+
 ```sh
 % docker build -t nom-docker .
 % docker run -p 8080:80 nom-docker

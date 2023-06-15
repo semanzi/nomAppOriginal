@@ -15,3 +15,7 @@ RUN pipenv run pip freeze >requirements.txt
 # the packages.
 RUN pip install --no-cache-dir --upgrade pip &&\
     pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+
+# The base Docker image tiangolo/uwsgi-nginx-flask:python3.11 uses ENTRYPOINT
+# To run the application at app/main.py.  
+# It's important the variable 'app' in main.py is set to the Dash server to run.
