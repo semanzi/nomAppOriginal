@@ -22,12 +22,29 @@ or similiar.
 % docker run -p 8080:80 nom-docker
 ```
 
-In Google Cloud Shell -
-```sh
+## Testing in the cloud
 
+In Google Cloud Shell Terminal -
+```sh
+$ git clone https://github.com/<USER>/<REPO>.git
+$ cd <REPO>
+$ git checkout <BRANCH>
+$ docker build -t <TAG> .
 ```
 
-To deploy to AWS Lightsail
+Google Cloud Shell was a web-preview feature (VPN) that can be used to run web applications and view in your browser (not visible to other users). See <https://cloud.google.com/shell/docs/using-web-preview>
+
+```sh
+$ docker run -p 8080:80 <TAG>
+```
+
+## Deploy to Google Cloud Run
+
+There are two ways to deploy a Docker container in Google Cloud Run, either specify a Docker image in a repository, e.g. on Docker Hub, or allow Cloud Run to build the image from a suitable GitHub repository.  
+
+Keep costs down by specifying 0 as the minimum number of instances.  I typically set the maximum to 5 rather than the default of 100.
+
+## Deploy to AWS Lightsail
 
 ```
 %aws aws lightsail push-container-image --region eu-west-2 --service-name container-demo --image msaunby/nom:latest --label nom 
