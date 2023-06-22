@@ -1,4 +1,5 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.11
+FROM tiangolo/meinheld-gunicorn-flask:python3.9
+# FROM tiangolo/uwsgi-nginx-flask:python3.11
 
 WORKDIR /app
 

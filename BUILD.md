@@ -3,6 +3,8 @@
 The ```Dockerfile``` here should enable simple building and deployment on a range of cloud hosting
 services. It can also be used for automated (DevOps) build and deployment, for example with GitHub Actions.
 
+The base Docker image includes Meinheld and Gunicorn with automatic configuation.  By providing an appropriately named application, i.e. ```main.py``` in directory ```app```, with a (flask) server named ```app```, everything should just work.  See <https://github.com/tiangolo/meinheld-gunicorn-flask-docker> for more information on this Docker image and recommendations for alternatives.
+
 
 ## Running locally
 There is no requirement to have a local Docker environment to build and run the container locally,
